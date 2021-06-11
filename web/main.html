@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>task3</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <form>
+        <div class="form-parts item-register-wrapper">
+            <div class="item-code item-register-parts">
+                <label for="item-code">商品コード</label>
+                <input type="number" name="item-code" id="item-code">
+            </div>
+            <div class="item-amount item-register-parts">
+                <label for="item-amount">個数</label>
+                <input type="number" name="item-amount" id="item-amount">
+            </div>
+            <div class="register-button item-register-parts">
+                <button type="button" id="register-btn">登録</button>
+            </div> 
+        </div>
+        <div class="form-parts buy-list">
+            <label for="buy-list">購入商品リスト</label><br>
+            <textarea name="log" id="buy-list"></textarea>
+        </div>
+        <div class="form-parts sum-price">
+            <p>合計金額<span id="sum-display-area"></span></p>
+        </div>
+        <div class="form-parts payment">
+            <label for="payment">お預かり金額</label>
+            <input type="number" name="payment" id="payment">
+            <button type="button" id="pay-btn">お会計</button>
+        </div>
+        <div class="form-parts change">
+            <p for="change">お釣り</p>
+        </div>
+    </form>
+    <script type="text/javascript" src="eel.js"></script>
+    <script type="text/javascript" src="./js/pos.js"></script>
+</body>
+</html>

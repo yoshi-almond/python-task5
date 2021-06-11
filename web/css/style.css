@@ -1,0 +1,16 @@
+form{
+    padding: 16px;
+}
+.form-parts{
+    margin-bottom: 25px;
+}
+.item-register-wrapper{
+    overflow: hidden;
+}
+.item-register-parts{
+    float: left;
+}
+textarea{
+    width: 80%;
+    height: 20rem;
+}
