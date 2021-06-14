@@ -20,5 +20,10 @@ def py_calc_sum():
     global order
     order.calc_sum()
 
+@eel.expose
+def py_calc_change(pay_amount):
+    global order
+    order.calc_change(pay_amount)
+
 eel.init("web")
 eel.start("main.html")

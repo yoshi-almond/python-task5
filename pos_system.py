@@ -48,10 +48,11 @@ class Order:
     def input_order(self,item_code,item_amount):
         if self.get_item_data(item_code)[0] == False:
             eel.js_pop_window("商品コードに対応するアイテムが見つかりませんでした")
-        self.add_order_list(item_code,item_amount)
-        item_name = self.get_item_data(item_code)[1]
-        item_price = self.get_item_data(item_code)[2]
-        eel.js_add_list("{0:20}{1}{2:<20}{3:20}".format(item_code,text_align(item_name),item_price,item_amount))
+        else:
+            self.add_order_list(item_code,item_amount)
+            item_name = self.get_item_data(item_code)[1]
+            item_price = self.get_item_data(item_code)[2]
+            eel.js_add_list("{0:20}{1}{2:<20}{3:20}".format(item_code,text_align(item_name),item_price,item_amount))
 
     def view_item_list(self):
         self.write_receipt("-----購入商品-----")
@@ -77,10 +78,13 @@ class Order:
             self.sum += self.get_item_data(order_code[0])[2] * int(order_code[1])
         eel.js_update_sum(self.sum)
 
-    def calc_change(self):
-        money = int(self.input_money())
-        change = money - self.sum
-        self.write_receipt(f"お釣り:{change}")
+    def calc_change(self, money):
+        if int(money) >= self.sum:
+            change = int(money) - self.sum
+            self.write_receipt(f"お釣り:{change}")
+            eel.js_show_change(change)
+        else:
+            eel.js_pop_window("金額が不足しています")
 
     def write_receipt(self,text):
         print(text)
