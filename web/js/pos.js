@@ -21,6 +21,13 @@ window.addEventListener('DOMContentLoaded',() => {
     },false);
 },false);
 
+//リセットボタンを押すと最初から
+window.addEventListener('DOMContentLoaded',() => {
+    document.getElementById('reset-btn').addEventListener('click', () => {
+        window.location.reload();
+    },false);
+},false);
+
 eel.expose(js_pop_window)
 function js_pop_window(text){
     window.alert(text);

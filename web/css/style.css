@@ -1,3 +1,9 @@
+body{
+    font-size: 20px;
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: azure;
+
+}
 form{
     padding: 16px;
 }
@@ -9,8 +15,26 @@ form{
 }
 .item-register-parts{
     float: left;
+    margin-right: 20px;
+}
+.payment-parts{
+    float: left;
+    margin-right: 20px;
+}
+.payment-wrapper{
+    overflow: hidden;
 }
 textarea{
     width: 80%;
     height: 20rem;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+input{
+    box-sizing: content-box;
+    border: 1px solid black;
+}
+input[type="number"]{
+    padding: 0.5rem;
+    border-radius: 5px;
 }
